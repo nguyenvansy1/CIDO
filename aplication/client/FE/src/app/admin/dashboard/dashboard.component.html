@@ -1,0 +1,176 @@
+<div id="main-content">
+    <div class="block-header">
+        <div class="row clearfix">
+            <div class="col-md-6 col-sm-12">
+                <h2>Dashboard</h2>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row clearfix">
+            <div class="col-12">
+                <div class="card top_report">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <i class="fa fa-2x fa-dollar text-col-blue"></i>
+                                    </div>
+                                    <div class="number float-right text-right">
+                                        <h6>Earnings</h6>
+                                        <span class="font700">{{sumLast}}</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs progress-transparent custom-color-blue mb-0 mt-3">
+                                    <div class="progress-bar" ></div>
+                                </div>
+                                <small class="text-muted"></small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <i class="fa fa-2x fa-bar-chart-o text-col-green"></i>
+                                    </div>
+                                    <div class="number float-right text-right">
+                                        <h6>Sales</h6>
+                                        <span class="font700">{{sumNow}}</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs progress-transparent custom-color-green mb-0 mt-3">
+                                    <div class="progress-bar" ></div>
+                                </div>
+                                <small class="text-muted"></small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <i class="fa fa-2x fa-shopping-cart text-col-red"></i>
+                                    </div>
+                                    <div class="number float-right text-right">
+                                        <h6>Booking</h6>
+                                        <span class="font700">215</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs progress-transparent custom-color-red mb-0 mt-3">
+                                    <div class="progress-bar" ></div>
+                                </div>
+                                <small class="text-muted"></small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="body">
+                                <div class="clearfix">
+                                    <div class="float-left">
+                                        <i class="fa fa-2x fa-thumbs-up text-col-yellow"></i>
+                                    </div>
+                                    <div class="number float-right text-right">
+                                        <h6>Account Register</h6>
+                                        <span class="font700">{{account}}</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-xs progress-transparent custom-color-yellow mb-0 mt-3">
+                                    <div class="progress-bar" ></div>
+                                </div>
+                                <small class="text-muted"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="header bline">
+                        <h2>Revenue Overview</h2>
+                        <ul class="header-dropdown dropdown dropdown-animated scale-left">
+                        
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <canvas id="myChart1" width="400" height="250"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Specific revenue</h2>
+                            <ul class="header-dropdown dropdown dropdown-animated scale-left">
+                                <li> <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i
+                                            class="icon-refresh"></i></a></li>
+                                <li><a href="javascript:void(0);" class="full-screen"><i
+                                            class="icon-size-fullscreen"></i></a></li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another Action</a></li>
+                                        <li><a href="javascript:void(0);">Something else</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <div class="col-5">
+                                    <div>
+                                        <canvas id="myChart2" width="400" height="400"></canvas>
+                                    </div>
+                                   
+                                </div>
+                                <div class="col-7">
+                                    <h6 class="font700">{{ticketFood.ticket+ticketFood.food}}$</h6>
+                                    <span>Ticket:<span class="float-right">{{ticketFood.ticket}}$</span></span><br>
+                                    <span>Foods & Drinks: <span class="float-right">{{ticketFood.food}}$</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Genre Overview </h2>
+                        <ul class="header-dropdown dropdown dropdown-animated scale-left">
+                            <li> <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse"><i
+                                        class="icon-refresh"></i></a></li>
+                            <li><a href="javascript:void(0);" class="full-screen"><i
+                                        class="icon-size-fullscreen"></i></a></li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another Action</a></li>
+                                    <li><a href="javascript:void(0);">Something else</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+
+
+        </div>
+    </div>
+</div>

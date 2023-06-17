@@ -1,0 +1,500 @@
+<app-header></app-header>
+<div id="amy-navigation-mobile">
+  <div class="menu-mainnav-container">
+    <ul id="menu-mainnav-1" class="menu">
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-121"><a
+          href="#">Home</a></li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
+        <a href="#">Movie</a>
+        <ul class="sub-menu">
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143"><a href="#now-playing/">Now
+              Playing</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a
+              href="#coming-soon/">Coming
+              Soon</a></li>
+        </ul>
+      </li>
+      <li
+        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-277">
+        <a href="#">Single Movie</a>
+        <ul class="sub-menu">
+          <li class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-338"><a
+              href="#movie/kubo-and-the-two-strings/">Full
+              Width &#038; Banner</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-365"><a
+              href="#movie/the-girl-with-all-the-gifts/">Full
+              Width &#038; No Banner</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-amy_movie current-menu-item menu-item-340">
+            <a href="#movie/jumanji-welcome-to-the-jungle/" aria-current="page">Sidebar &#038;
+              Banner</a>
+          </li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-amy_movie menu-item-366"><a
+              href="#movie/bad-moms/">Sidebar
+              &#038; No Banner</a></li>
+        </ul>
+      </li>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+        <a href="#">Showtime</a>
+        <ul class="sub-menu">
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a
+              href="#daily-showtime-layout-list/">Daily
+              Showtime Layout List</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a
+              href="#daily-showtime-ajax/">Daily
+              Showtime Ajax</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149"><a
+              href="#weekly-showtime-ajax/">Weekly
+              Showtime Ajax</a></li>
+          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a
+              href="#weekly-showtime-table/">Weekly
+              Showtime Table</a></li>
+        </ul>
+      </li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="#top-rated/">Top
+          rated</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="main">
+  <div id="content" class="site-content">
+
+    <section id="amy-page-header" class="amy-page-header">
+      <img style="height: 127px"
+        src="https://firebasestorage.googleapis.com/v0/b/dtu-event.appspot.com/o/tix-banner.36bfeb64.png?alt=media&token=28440a94-1b94-45a5-b1d3-d97587b89017"
+        alt="Jumanji: Welcome to the Jungle" />
+    </section>
+
+    <section class="main-content amy-movie single-movie layout-right has-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="page-content">
+
+              <article id="post-74" class="post-74">
+                <div class="entry-top">
+                  <div class="entry-poster">
+                    <img style="width: 210px;" class="thumb-detail-img" src="{{movieDetail?.movieImages[0].imageUrl}}"
+                      alt="Jumanji: Welcome to the Jungle" />
+                  </div>
+                  <div class="entry-info">
+                    <h1 class="entry-title p-name">
+                      <a href="#movie/jumanji-welcome-to-the-jungle/" rel="bookmark" class="u-url url" itemprop="url">
+                        {{movieDetail?.title}} </a>
+                    </h1>
+
+
+                    <div class="entry-pg">
+                      <span class="pg">G</span>
+
+                      <span class="duration">
+                        <i class="fa fa-clock-o"></i>
+                        {{convertTime(movieDetail?.runningTime)}}
+                      </span>
+
+                      <div onclick="checkComnent()" class="btn btn-comment">
+                        Đánh giá
+                      </div>
+
+                      <div class="btn btn-trailer-detail" style="margin-left: 10px;">Trailer</div>
+                    </div>
+
+                    <ul class="info-list">
+                      <li>
+                        <label>
+                          Diễn viên:
+                        </label>
+                        <span>
+                          <a href="#">{{movieDetail?.cast}} minutes</a></span>
+                      </li>
+
+                      <li>
+                        <label>
+                          Nhà sản xuất:
+                        </label>
+                        <span>
+                          <a href="#">{{movieDetail?.director}}</a></span>
+                      </li>
+
+                      <li>
+                        <label>
+                          Thể loại:
+                        </label>
+                        <span>
+                          <a href="#">{{convertGenre(movieDetail?.genres)}}</a>
+
+                        </span>
+                      </li>
+
+                      <li>
+                        <label>
+                          Khởi chiếu:
+                        </label>
+                        <span>
+                          {{movieDetail?.releaseDate | date}}</span>
+                      </li>
+
+
+
+
+
+                    </ul>
+                    <!-- Modal day ne -->
+                    <input type="hidden" value="97% match" class="percent-match">
+                    <input type="hidden" value="Limited Series" class="limited">
+                    <input type="hidden"
+                      value="Các cư dân tham vọng khôn cùng ở khu căn hộ sang trọng nhất Seoul vứt bỏ đạo đức qua một bên để leo lên đỉnh cao chót vót của sự giàu có và quyền lực."
+                      class="description">
+                    <input type="hidden" value=" Nguyen Kon Chim" class="actor">
+                    <input type="hidden" value=" Đấm nhau, Kịch Liệt" class="theloai">
+                    <input type="hidden" value="4" class="rate">
+                    <!-- Modal day ne -->
+                    <div class="entry-action">
+                      <div class="mrate  no-rate">
+                      </div>
+                      <div class="entry-share">
+                        <label>Share:</label>
+                        <ul class="amy-social-links clearfix">
+                          <li><a
+                              href="https://www.facebook.com/sharer.php?u=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
+                              class="fab fa-facebook" target="_blank"></a></li>
+                          <li><a
+                              href="http://www.twitter.com/share?url=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
+                              class="fab fa-twitter" target="_blank"></a></li>
+                          <li><a
+                              href="http://pinterest.com/pin/create/button/?url=http://demo.amytheme.com/movie/demo/elementor-single-cinema/movie/jumanji-welcome-to-the-jungle/"
+                              class="fab fa-pinterest" target="_blank"></a></li>
+                        </ul>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="entry-content e-content">
+                  <h3 class="info-name amy-title">Nội dung</h3>
+                  <p>{{movieDetail.content}}</p>
+                </div>
+
+
+                <div class="entry-showtime single-cinema">
+                  <div class="clearfix">
+                    <h3 class="info-name amy-title">Giờ chiếu</h3>
+                  </div>
+                  <div class="showtime">
+                    <div class="showtime-item single-cinema">
+                      <div *ngFor="let dateTime of dateDTO; let i = index" class="st-item">
+                        <div class="st-title"><label>{{dateTime?.day | date}}</label></div>
+                        <ul>
+                          <li *ngFor="let time of dateTime.showtime; let i = index"><a
+                              (click)="redirectBooking(time.id)">{{time.time | slice:0:5 }}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </article>
+
+              <!-- Modal -->
+              <div class="overlay" style="display: none;"></div>
+              <div class="modal-binhluan" style="display: none;">
+                <div class="modal-header">
+                  Đánh giá: {{movieDetail?.title}}
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div style="height: 350px;">
+                        <img style="height: 100%; border-radius: 10px;" src="{{movieDetail?.movieImages[0].imageUrl}}"
+                          alt="">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+                        <div style=" text-align: center;">
+                          <p style="margin: 0;">Đánh giá</p>
+                          <div class='rating-stars text-center' style="text-align: left;">
+                            <ul id='stars'>
+                              <li class='star' (click)="handleStarClick(1)" title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                              </li>
+                              <li class='star' (click)="handleStarClick(2)" title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                              </li>
+                              <li class='star' (click)="handleStarClick(3)" title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                              </li>
+                              <li class='star' (click)="handleStarClick(4)" title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                              </li>
+                              <li class='star' (click)="handleStarClick(5)" title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="box-comment-bl">
+                          <p>Review của bạn(có thể để trống)</p>
+                          <div class="form-group">
+                            <textarea style="font-size: 14px;" formControlName="content" placeholder="Đánh giá của bạn"
+                              name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="row">
+                            <div class="col-md-9">
+                              <style>
+                                .btn-dang:hover {
+                                  color: #fff;
+                                  opacity: 0.8 !important;
+                                  background-color: #000 !important;
+                                }
+                              </style>
+                              <button class="btn btn-dang" style="width: 100%; background-color: #12263f;">Đăng</button>
+                            </div>
+                            <div class="col-md-3">
+                              <button #closeBtn class="cls" hidden></button>
+                              <div class="btn btn-huy cls" style="padding-left: 30px; padding-right: 30px;">Hủy</div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal -->
+            </div>
+
+            <div class="col-md-12">
+              <div class="card" style="margin-top: 20px;">
+                <div class="card-infinite" style="padding: 0 10px;">
+                  <h1 class="h2 text-center">
+                    Cộng đồng
+                    <span class="text-secondary"></span>
+                  </h1>
+                  <div *ngFor="let comment of commentList" class="card card-sm article mb-3">
+                    <div class="card-body">
+                      <div class="mb-3">
+                        <div class="row align-items-center">
+                          <div class="col-auto">
+                            <a class="avatar is-phone-verification-needed" href="#">
+                              <img style="width: 50px;" src="https://moveek.com/bundles/ornweb/img/no-avatar.png"
+                                alt="hieupham95" class="avatar-img rounded-circle">
+                            </a>
+                          </div>
+                          <div class="col ml-n2">
+                            <h4 class="card-title mb-1">
+                              <a class="is-phone-verification-needed" href="#">{{comment?.account.fullname}}</a>
+                              <span>
+                                <i class="icon-star text-warning"></i>
+                                {{comment?.rate}}
+                              </span>
+                            </h4>
+
+                            <!-- Time -->
+                            <p class="card-text small text-muted">
+                              <time datetime="2023-05-17 08:15:17">{{convert(comment?.createAt)}}</time>
+                            </p>
+                          </div>
+                        </div> <!-- / .row -->
+                      </div>
+                      <div class="">
+                        <div class="review-content">
+                          {{comment?.content}}
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 amy-sidebar-clear">
+            <div class="amy-page-sidebar amy-sidebar-right">
+              <aside id="sidebar">
+                <div class="amy-widget widget_block widget_media_image">
+                  <figure class="wp-block-image size-full">
+                    <img loading="lazy" width="350" height="272"
+                      src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png"
+                      alt="" class="wp-image-254"
+                      srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_62-300x233.png 300w"
+                      sizes="(max-width: 350px) 100vw, 350px" />
+                  </figure>
+                  <div class="clear"></div>
+                </div>
+                <div class="amy-widget amy-widget-list">
+                  <div class="amy-widget amy-widget-list list-movie ">
+                    <h4 class="amy-title amy-widget-title">Top Movie</h4>
+                    <div class="entry-item">
+                      <div class="entry-thumb">
+                        <img class=""
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_20-118x159_c.jpg"
+                          alt="Kubo and the Two Strings" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a href="#movie/kubo-and-the-two-strings/">Kubo
+                            and the Two Strings</a></h2>
+                        <div><span class="duration"><i class="fa fa-clock-o"></i>02
+                            hours 00 minutes</span></div>
+                        <div class="genre"><span><a href="#genre/cartoon/">Cartoon</a>,
+                            <a href="#genre/comic/">Comic</a></span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="entry-item">
+                      <div class="entry-thumb">
+                        <img class=""
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_19-118x159_c.jpg"
+                          alt="The Hurricane Heist" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a href="#movie/the-hurricane-heist/">The
+                            Hurricane Heist</a></h2>
+                        <div><span class="duration"><i class="fa fa-clock-o"></i>01
+                            hours 30 minutes</span></div>
+                        <div class="genre"><span><a href="#genre/comic/">Comic</a>,
+                            <a href="#genre/magic/">Magic</a></span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="entry-item">
+                      <div class="entry-thumb">
+                        <img class=""
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_17-118x159_c.jpg"
+                          alt="Jumanji: Welcome to the Jungle" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a href="#movie/jumanji-welcome-to-the-jungle/">Jumanji:
+                            Welcome to the Jungle</a></h2>
+                        <div><span class="duration"><i class="fa fa-clock-o"></i>02
+                            hours 30 minutes</span></div>
+                        <div class="genre"><span><a href="#genre/cartoon/">Cartoon</a>,
+                            <a href="#genre/sci-fi/">Sci-fi</a></span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="entry-item">
+                      <div class="entry-thumb">
+                        <img class=""
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_18-118x159_c.jpg"
+                          alt="Death Wish" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a href="#movie/death-wish/">Death
+                            Wish</a></h2>
+                        <div><span class="duration"><i class="fa fa-clock-o"></i>01
+                            hours 00 minutes</span></div>
+                        <div class="genre"><span><a href="#genre/cartoon/">Cartoon</a>,
+                            <a href="#genre/comic/">Comic</a></span>
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="amy-widget amy-widget-list">
+                  <div class="amy-widget amy-widget-list list-post ">
+                    <h4 class="amy-title amy-widget-title">Recent Posts</h4>
+                    <div class="entry-item">
+                      <div class="entry-thumb"><img
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_59-115x85_c.jpg" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a
+                            href="#2022/04/28/six-book-to-film-adaptations-to-get-excited-about-this-autumn/">Six
+                            book-to-film adaptations to get excited about this
+                            autumn</a></h2>
+                        <div class="entry-meta"><span class="entry-date">April 28,
+                            2022</span><span> / </span><span class="entry-comment">0
+                            Comments</span></div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="entry-item">
+                      <div class="entry-thumb"><img
+                          src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_57-115x85_c.jpg" />
+                      </div>
+                      <div class="entry-content">
+                        <h2 class="entry-title"><a href="#2022/04/28/the-beatles-eight-days-a-week-the-touring/">The
+                            Beatles: Eight Days a Week – The Touring</a></h2>
+                        <div class="entry-meta"><span class="entry-date">April 28,
+                            2022</span><span> / </span><span class="entry-comment">0
+                            Comments</span></div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="amy-widget widget_block widget_media_image">
+                  <figure class="wp-block-image size-full"><img loading="lazy" width="350" height="290"
+                      src="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png"
+                      alt="" class="wp-image-255"
+                      srcset="http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63.png 350w, http://demo.amytheme.com/movie/demo/elementor-single-cinema/wp-content/uploads/sites/2/2022/05/img_63-300x249.png 300w"
+                      sizes="(max-width: 350px) 100vw, 350px" /></figure>
+                  <div class="clear"></div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="overlay" style="display: none;"></div>
+      <div class="modal-trailer" style="display: none;">
+        <div class="modal-body">
+          <div class="cls" style="z-index: 999999999;">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="video-src" style="position: absolute; width: 97.1%; z-index:99999;">
+            <youtube-player class="vdo-ytb" [width]="600" [videoId]="idMovieYTB"
+              (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+          </div>
+          <div class="detail-img">
+            
+      
+          </div>
+          <div class="detail-in text-white">
+            <div class="containers">
+              <div class="dt-left">
+                <section class="d-flex align-items-center ">
+                  <p class=" m-0" style="color: rgb(0, 186, 0);">97% match</p>
+                  <span class="m-2  text-white">Limited Series</span>
+                  <span class="border  hd text-white">HD</span>
+                </section>
+                <span>
+                  {{movieDetail?.content}}
+                </span>
+              </div>
+              <div class="dt-right">
+                <div>
+                  <p> <span>Diễn Viên:</span> {{movieDetail?.cast}} </p>
+                  <p> <span>Thể Loại:</span>{{convertGenre(movieDetail?.genres)}}</p>
+                  <p>
+                    <span>Đánh Giá:</span>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+</div>
+<app-footer></app-footer>

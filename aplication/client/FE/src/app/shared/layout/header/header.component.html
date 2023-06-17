@@ -1,0 +1,109 @@
+<div id="page" class="hfeed site">
+  <header id="masthead" class="site-header header-default  light">
+    <div class="container">
+      <div class="amy-inner">
+        <div class="amy-left">
+          <div id="amy-site-logo">
+            <a routerLink="/home">
+              <img style="height: 20px"
+                src="https://scontent.xx.fbcdn.net/v/t1.15752-9/349108195_278636767900022_5558141228396537635_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=aee45a&_nc_ohc=5E-ZUz-lQZ4AX-jQc9y&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTJCnkD2HfqDlRRgeI8FECkZ27v9AcM1cfl3UK70NoT4A&oe=6496FDC3"
+                alt="Elementor Single Cinema" />
+            </a>
+          </div>
+        </div>
+        <div class="amy-right" style="left: 150px; position: relative;">
+          <nav id="amy-site-nav" class="amy-site-navigation amy-primary-navigation"
+            style="display: flex; align-items: center; position: relative;">
+            <div class="menu-mainnav-container">
+              <ul id="menu-mainnav" class="nav-menu">
+                <li id="menu-item-121"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-121">
+                  <a routerLink="/home">Trang chủ</a>
+                </li>
+                <li id="menu-item-276"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-276">
+                  <a href="#">Phim</a>
+                  <ul class="sub-menu">
+                    <li id="menu-item-143"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
+                      <a routerLink="/now-playing">Đang chiếu</a>
+                    </li>
+                    <li id="menu-item-134"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134">
+                      <a routerLink="/comming-soon">Sắp chiếu</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li id="menu-item-278"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278">
+                  <a routerLink="/show-time">Lịch chiếu</a>
+                </li>
+                <li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
+                  <a routerLink="/top-rate">Top phim</a>
+                </li>
+
+              </ul>
+            </div>
+
+            <!-- search -->
+            <div style="margin-left: 20px;">
+              <div class="search-box">
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+                <input (keyup)=(searchMovie(inputName.value)) #inputName type="text" class="input-search"
+                  placeholder="Type to Search...">
+                  <button class="btn-close" style="display: none;top:0px"> <i class="fa-solid fa-xmark"></i></button>
+                <!-- list search -->
+                <style>
+                  .item-list:hover {
+                    background: #3333;
+                    cursor: pointer;
+                    transition: all 0.3s linear;
+                  }
+                </style>
+                <div class="show-search"
+                  style="overflow-y: scroll;height: 380px;display: none; text-align: left;padding: 10px 15px;  border-radius: 5px;">
+                  <li *ngIf="movieListSearch == null">Không tìm thấy kết quả</li>
+                  <a class="item-list" *ngFor="let movie of movieListSearch" [routerLink]="['/movie-detail', movie?.id]"
+                    style="transition: all 0.3s linear; display: flex; align-items: center; margin-bottom: 8px;">
+                    <div style="display: contents;">
+                      <img style="width: 60px; height: 60px;" src="{{movie?.movieImages[0].imageUrl}}" alt="">
+                    </div>
+                    <div style="margin-left: 10px;">
+                      <h6 style="margin: 0;font-size: 14px;">{{movie?.title}}</h6>
+                      <p style="margin: 0; font-size: 13px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Nisi, tempore.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div id="amy-menu-toggle"><a><span></span></a></div>
+        </div>
+        <div class="login"
+          style="margin-left: 50px; font-size: 14px; font-weight: 600; position: relative; left: 130px;">
+          <a *ngIf="!isLoggedIn" routerLink="/login">Đăng nhập</a>
+        </div>
+        <div *ngIf="isLoggedIn" class="user" style="position: relative; left: 130px;">
+          <div class="img-user" style="width: 35px; cursor: pointer;">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user">
+          </div>
+          <div class="list-down" style="display: none;">
+            <ul>
+              <li routerLink="/profile">
+                <i class="fa-solid fa-gear"></i>
+                Hồ sơ
+              </li>
+              <li (click)="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Đăng xuất
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="amy-site-header-shadow"></div>
+  </header>

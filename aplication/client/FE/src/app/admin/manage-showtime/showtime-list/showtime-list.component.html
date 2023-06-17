@@ -1,0 +1,81 @@
+
+
+<div id="main-content">
+  <div class="block-header">
+    <div class="row clearfix">
+      <div class="col-md-6 col-sm-12">
+        <h2></h2>
+      </div>
+      <div class="col-md-6 col-sm-12 text-right">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class=""></i></a></li>
+      
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="container-fluid">
+
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2>Manage Showtime</h2>
+            <ul class="header-dropdown dropdown dropdown-animated scale-left">
+              <li style="margin-right: 10px;">
+             
+              </li>
+              <li>
+              </li>
+            </ul>
+          </div>
+          <div class="body">
+            <div class="table-responsive">
+              <table class="table table-hover js-basic-example dataTable table-custom mb-0 tb-create">
+                <thead class="thead-dark">
+                  <tr>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Show date</th>
+                    <th class="text-center">Movie </th>
+                    <th class="text-center">Screen </th>
+                    <th class="text-center">Showtime </th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let movie of movieShowTimeList | paginate: { itemsPerPage: pageSize, currentPage: currentPage }; let i = index">
+                    <td class="text-center">{{ (currentPage - 1) * pageSize + i + 1 }}</td>
+                    <td class="text-center">{{movie?.showDate}}</td>
+                    <td class="text-center">{{movie?.movie.title}}</td>
+                    <td class="text-center">{{movie?.screen.id}}</td>
+                    <td class="text-center">{{movie?.showtime.showTime}}</td>
+                    <td class="text-center align-middle" style="display: flex; align-items: center;">
+                      <button class="btn btn-sm round btn-outline-danger"
+                        style="margin-left: 47px;display: center;border:none;outline: none;width: 50%; background: red;">Delete</button>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+              <div style="text-align: center;padding: 30px 0;">
+                <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
